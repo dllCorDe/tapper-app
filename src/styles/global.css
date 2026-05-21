@@ -1,0 +1,257 @@
+:root {
+  color: #1f2933;
+  background: #f5f7fb;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.setup-screen,
+.app-shell {
+  min-height: 100vh;
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.setup-screen {
+  display: grid;
+  place-items: center;
+}
+
+.setup-panel {
+  width: min(100%, 520px);
+  padding: 32px;
+  border: 1px solid #dde3ec;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(31, 41, 51, 0.1);
+}
+
+.eyebrow {
+  display: block;
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 720px;
+  margin: 8px 0 12px;
+  color: #111827;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 0.95;
+}
+
+p {
+  margin: 0;
+  color: #52616f;
+  line-height: 1.6;
+}
+
+.profile-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.profile-form label {
+  color: #334155;
+  font-weight: 700;
+}
+
+.profile-form input {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 16px;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.profile-form input:focus {
+  border-color: #0f766e;
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+.button-stack,
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 800;
+}
+
+.primary-button {
+  border: 1px solid #0f766e;
+  color: #ffffff;
+  background: #0f766e;
+}
+
+.secondary-button {
+  border: 1px solid #cbd5e1;
+  color: #1f2933;
+  background: #ffffff;
+}
+
+.app-shell {
+  display: grid;
+  align-content: start;
+  gap: 28px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.profile-pill {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d6deea;
+  border-radius: 999px;
+  padding: 0 14px;
+  color: #344256;
+  background: #ffffff;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.arena {
+  display: grid;
+  gap: 28px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  min-height: 92px;
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.stat span {
+  display: block;
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 8px;
+  color: #111827;
+  font-size: clamp(1.35rem, 5vw, 2.5rem);
+  line-height: 1;
+}
+
+.tap-button {
+  display: grid;
+  min-height: min(58vh, 460px);
+  place-items: center;
+  align-content: center;
+  gap: 18px;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(255, 255, 255, 0.28), transparent 28%),
+    linear-gradient(135deg, #0f766e 0%, #2563eb 100%);
+  box-shadow: 0 28px 70px rgba(37, 99, 235, 0.24);
+  font-size: clamp(3.5rem, 18vw, 9rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.tap-button:active {
+  transform: translateY(2px) scale(0.995);
+}
+
+.tap-button:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible {
+  outline: 4px solid rgba(37, 99, 235, 0.22);
+  outline-offset: 4px;
+}
+
+.tap-icon {
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 720px) {
+  .setup-screen,
+  .app-shell {
+    padding: 22px 14px;
+  }
+
+  .setup-panel {
+    padding: 24px;
+  }
+
+  .top-bar {
+    display: grid;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tap-button {
+    min-height: 42vh;
+  }
+
+  .button-stack > *,
+  .action-row > * {
+    flex: 1 1 180px;
+  }
+}
