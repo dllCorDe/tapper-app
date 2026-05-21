@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Zap } from 'lucide-react';
 import type { TapStats } from '../../app/App';
 
@@ -10,8 +10,12 @@ type TapperArenaProps = {
 export function TapperArena({ stats, onStatsChange }: TapperArenaProps) {
   const [currentStreak, setCurrentStreak] = useState(0);
 
+  useEffect(() => {
+    setCurrentStreak(0);
+  }, [stats.startedAt]);
+
   const hitsPerMinute = useMemo(() => {
-    const elapsedMinutes = Math.max((Date.now() - new Date(stats.startedAt).getTime()) / 60000, 1 / 60);
+    const elapsedMinutes = Math.max((Date.now() - new Date(stats.startedAt).getTime()) / 60000, 1);
     return Math.round(stats.hits / elapsedMinutes);
   }, [stats.hits, stats.startedAt]);
 
